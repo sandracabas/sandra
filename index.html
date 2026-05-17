@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandra Cabas | Comunicación Organizacional</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --azul-claro:#7F9BD0;
+      --azul-oscuro:#233555;
+      --blanco:#ffffff;
+      --dorado:#D4A66A;
+      --gris:#f5f7fb;
+      --texto:#2c2c2c;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Montserrat', sans-serif;
+      color:var(--texto);
+      line-height:1.6;
+      background:#fff;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      background:var(--azul-claro);
+      padding:20px 0;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,.08);
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .logo img{
+      width:95px;
+      border:2px solid rgba(255,255,255,.6);
+    }
+
+    .brand-text h1{
+      color:white;
+      font-size:2rem;
+      font-weight:300;
+      letter-spacing:1px;
+    }
+
+    .brand-text span{
+      color:var(--dorado);
+      font-weight:500;
+      font-size:1rem;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      transition:.3s;
+    }
+
+    nav a:hover{
+      color:var(--dorado);
+    }
+
+    /* HERO */
+
+    .hero{
+      background:linear-gradient(rgba(35,53,85,.70), rgba(35,53,85,.70)),
+      url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop') center/cover;
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      color:white;
+    }
+
+    .hero-content{
+      max-width:700px;
+    }
+
+    .hero-subtitle{
+      font-family:'Caveat', cursive;
+      font-size:3rem;
+      margin-bottom:10px;
+      color:white;
+    }
+
+    .hero h2{
+      font-size:3.5rem;
+      line-height:1.1;
+      margin-bottom:25px;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--dorado);
+      color:white;
+      padding:15px 30px;
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:white;
+      color:var(--azul-oscuro);
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:2.5rem;
+      color:var(--azul-oscuro);
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#666;
+      max-width:700px;
+      margin:auto;
+    }
+
+    /* ABOUT */
+
+    .about{
+      background:var(--gris);
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,.15);
+    }
+
+    .about-content h3{
+      color:var(--azul-oscuro);
+      font-size:2rem;
+      margin-bottom:20px;
+    }
+
+    .about-content p{
+      margin-bottom:20px;
+    }
+
+    .check-list{
+      margin-top:20px;
+    }
+
+    .check-list li{
+      list-style:none;
+      margin-bottom:15px;
+      padding-left:30px;
+      position:relative;
+    }
+
+    .check-list li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--dorado);
+      font-weight:bold;
+    }
+
+    /* PROGRAMAS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      padding:35px;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      transition:.3s;
+      border-top:5px solid var(--azul-claro);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card h3{
+      color:var(--azul-oscuro);
+      margin-bottom:18px;
+    }
+
+    .card p{
+      margin-bottom:20px;
+      color:#555;
+    }
+
+    .card ul{
+      padding-left:18px;
+    }
+
+    .card ul li{
+      margin-bottom:10px;
+    }
+
+    /* RESULTADOS */
+
+    .results{
+      background:var(--azul-oscuro);
+      color:white;
+    }
+
+    .results-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+      text-align:center;
+    }
+
+    .result-item{
+      padding:30px;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:18px;
+    }
+
+    .result-item h3{
+      color:var(--dorado);
+      font-size:1.2rem;
+      margin-bottom:15px;
+    }
+
+    /* CTA */
+
+    .cta{
+      background:var(--azul-claro);
+      text-align:center;
+      color:white;
+    }
+
+    .cta h2{
+      font-size:2.7rem;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:auto auto 30px;
+      font-size:1.1rem;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#1c2941;
+      color:white;
+      padding:40px 0;
+      text-align:center;
+    }
+
+    footer p{
+      margin-bottom:10px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h2{
+        font-size:2.5rem;
+      }
+
+      .hero-subtitle{
+        font-size:2.2rem;
+      }
+
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container navbar">
+
+      <div class="logo">
+        <img src="logo.png" alt="Sandra Cabas">
+        <div class="brand-text">
+          <h1>Sandra Cabas</h1>
+          <span>Comunicación Organizacional & Coaching</span>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#programas">Programas</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero" id="inicio">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="hero-subtitle">
+          El arte de conectar
+        </div>
+
+        <h2>
+          Comunicación consciente para transformar liderazgo, cultura y resultados
+        </h2>
+
+        <p>
+          Integro coaching ontológico y comunicación organizacional para transformar mensajes en conversaciones que construyen confianza, alinean equipos y fortalecen la cultura.
+        </p>
+
+        <a href="#contacto" class="btn">
+          Agenda una conversación inicial
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOBRE MI -->
+
+  <section class="about" id="sobre-mi">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>¿Por qué trabajar conmigo?</h2>
+        <p>
+          Mi diferencial está en integrar coaching, comunicación y estrategia desde una mirada humana y transformadora.
+        </p>
+      </div>
+
+      <div class="about-grid">
+
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="about-content">
+
+          <h3>
+            Comunicación como espacio de transformación
+          </h3>
+
+          <p>
+            Trabajo allí donde la comunicación deja de ser solo información y se convierte en un espacio de aprendizaje, relación y acción.
+          </p>
+
+          <ul class="check-list">
+            <li>Coaching ontológico aplicado al liderazgo y equipos</li>
+            <li>Comunicación organizacional consciente</li>
+            <li>Agilismo y Management 3.0</li>
+            <li>Escucha profunda e inteligencia emocional</li>
+            <li>Transformación cultural sostenible</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROGRAMAS -->
+
+  <section id="programas">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Programas de acompañamiento</h2>
+        <p>
+          Procesos diseñados para fortalecer liderazgo, cultura organizacional y conversaciones conscientes.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Comunicación Consciente y Cultura Organizacional</h3>
+          <p>
+            Alineo comunicación, valores y propósito para fortalecer la cultura y el sentido de pertenencia.
+          </p>
+
+          <ul>
+            <li>Diagnóstico comunicacional</li>
+            <li>Estrategias de comunicación interna</li>
+            <li>Conversaciones organizacionales clave</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Liderazgo Consciente y Comunicación Estratégica</h3>
+          <p>
+            Acompaño líderes a comunicar con claridad, coherencia y presencia.
+          </p>
+
+          <ul>
+            <li>Coaching individual y grupal</li>
+            <li>Escucha activa</li>
+            <li>Gestión emocional del liderazgo</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Gestión del Cambio e Inteligencia Emocional</h3>
+          <p>
+            Facilito procesos de cambio cuidando la dimensión emocional y relacional de los equipos.
+          </p>
+
+          <ul>
+            <li>Comunicación empática</li>
+            <li>Manejo de resistencias</li>
+            <li>Regulación emocional</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Coaching Organizacional y de Equipos</h3>
+          <p>
+            Procesos de coaching enfocados en ampliar la capacidad de acción y resultados.
+          </p>
+
+          <ul>
+            <li>Coaching de equipos</li>
+            <li>Conversaciones efectivas</li>
+            <li>Mejora del desempeño relacional</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RESULTADOS -->
+
+  <section class="results" id="resultados">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2 style="color:white;">Resultados que se construyen</h2>
+      </div>
+
+      <div class="results-grid">
+
+        <div class="result-item">
+          <h3>Comunicación clara</h3>
+          <p>
+            Mensajes coherentes que fortalecen la confianza.
+          </p>
+        </div>
+
+        <div class="result-item">
+          <h3>Liderazgos conscientes</h3>
+          <p>
+            Líderes más presentes, humanos y efectivos.
+          </p>
+        </div>
+
+        <div class="result-item">
+          <h3>Equipos alineados</h3>
+          <p>
+            Mayor compromiso y sentido de pertenencia.
+          </p>
+        </div>
+
+        <div class="result-item">
+          <h3>Cambios sostenibles</h3>
+          <p>
+            Procesos organizacionales más humanos y adaptables.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta" id="contacto">
+
+    <div class="container">
+
+      <h2>
+        Conversemos
+      </h2>
+
+      <p>
+        Si sientes que es momento de comunicar distinto para lograr resultados distintos, agenda una conversación inicial y exploremos juntas el camino.
+      </p>
+
+      <a href="mailto:contacto@tumarca.com" class="btn">
+        Contactar ahora
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <p><strong>Sandra Cabas</strong></p>
+      <p>Coaching & Comunicación Organizacional</p>
+      <p>© 2026 Todos los derechos reservados</p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
