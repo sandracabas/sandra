@@ -1,607 +1,475 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sandra Cabas | Comunicación Organizacional</title>
+  <meta name="theme-color" content="#233555" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <title>Sandra Cabas | Comunicación Organizacional, Coaching y Marca Personal</title>
+  <meta name="description" content="Sandra Cabas acompaña organizaciones, líderes y profesionales con comunicación organizacional, coaching y marca personal para fortalecer cultura, liderazgo, conversaciones y posicionamiento." />
+  <meta name="keywords" content="Sandra Cabas, comunicación organizacional, coaching, coaching ejecutivo, marca personal, liderazgo consciente, cultura organizacional, comunicación interna, gestión del cambio, posicionamiento profesional, Colombia" />
+  <meta name="author" content="Sandra Cabas" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://sandracabas.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:title" content="Sandra Cabas | Comunicación Organizacional, Coaching y Marca Personal" />
+  <meta property="og:description" content="Comunicación, coaching y marca personal para fortalecer liderazgo, cultura y posicionamiento profesional." />
+  <meta property="og:url" content="https://sandracabas.com/" />
+  <meta property="og:site_name" content="Sandra Cabas" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1600&auto=format&fit=crop" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sandra Cabas | Comunicación Organizacional, Coaching y Marca Personal" />
+  <meta name="twitter:description" content="Comunicación, coaching y estrategia para fortalecer liderazgo, cultura y marca personal." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1600&auto=format&fit=crop" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              sky: '#7F9BD0',
+              navy: '#233555',
+              gold: '#D4A66A',
+              ink: '#2c2c2c',
+              mist: '#f5f7fb'
+            }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 18px 50px rgba(35, 53, 85, 0.14)',
+            gold: '0 18px 40px rgba(212, 166, 106, 0.25)'
+          }
+        }
+      }
+    };
+  </script>
 
   <style>
-    :root{
-      --azul-claro:#7F9BD0;
-      --azul-oscuro:#233555;
-      --blanco:#ffffff;
-      --dorado:#D4A66A;
-      --gris:#f5f7fb;
-      --texto:#2c2c2c;
+    :root {
+      --azul-claro: #7F9BD0;
+      --azul-oscuro: #233555;
+      --blanco: #ffffff;
+      --dorado: #D4A66A;
+      --gris: #f5f7fb;
+      --texto: #2c2c2c;
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    body {
+      color: var(--texto);
+      background: var(--blanco);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
 
-    body{
-      font-family:'Montserrat', sans-serif;
-      color:var(--texto);
-      line-height:1.6;
-      background:#fff;
+    .hero-media {
+      background-image:
+        linear-gradient(90deg, rgba(35, 53, 85, 0.94) 0%, rgba(35, 53, 85, 0.78) 44%, rgba(35, 53, 85, 0.35) 100%),
+        url('https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1800&auto=format&fit=crop');
+      background-position: center;
+      background-size: cover;
     }
 
-    html{
-      scroll-behavior:smooth;
+    .texture-grid {
+      background-image:
+        linear-gradient(rgba(127, 155, 208, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(127, 155, 208, 0.1) 1px, transparent 1px);
+      background-size: 34px 34px;
     }
 
-    .container{
-      width:90%;
-      max-width:1200px;
-      margin:auto;
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms ease, transform 700ms ease;
     }
 
-    /* HEADER */
-
-    header{
-      background:var(--azul-claro);
-      padding:20px 0;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      box-shadow:0 2px 10px rgba(0,0,0,.08);
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .navbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    .float-soft {
+      animation: floatSoft 7s ease-in-out infinite;
     }
 
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:18px;
+    .pulse-line {
+      animation: pulseLine 2.8s ease-in-out infinite;
     }
 
-    .logo img{
-      width:95px;
-      border:2px solid rgba(255,255,255,.6);
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
-    .brand-text h1{
-      color:white;
-      font-size:2rem;
-      font-weight:300;
-      letter-spacing:1px;
+    @keyframes pulseLine {
+      0%, 100% { opacity: 0.35; transform: scaleX(0.7); }
+      50% { opacity: 1; transform: scaleX(1); }
     }
 
-    .brand-text span{
-      color:var(--dorado);
-      font-weight:500;
-      font-size:1rem;
-    }
-
-    nav ul{
-      display:flex;
-      list-style:none;
-      gap:30px;
-    }
-
-    nav a{
-      color:white;
-      text-decoration:none;
-      font-weight:500;
-      transition:.3s;
-    }
-
-    nav a:hover{
-      color:var(--dorado);
-    }
-
-    /* HERO */
-
-    .hero{
-      background:linear-gradient(rgba(35,53,85,.70), rgba(35,53,85,.70)),
-      url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop') center/cover;
-      min-height:90vh;
-      display:flex;
-      align-items:center;
-      color:white;
-    }
-
-    .hero-content{
-      max-width:700px;
-    }
-
-    .hero-subtitle{
-      font-family:'Caveat', cursive;
-      font-size:3rem;
-      margin-bottom:10px;
-      color:white;
-    }
-
-    .hero h2{
-      font-size:3.5rem;
-      line-height:1.1;
-      margin-bottom:25px;
-    }
-
-    .hero p{
-      font-size:1.2rem;
-      margin-bottom:35px;
-    }
-
-    .btn{
-      display:inline-block;
-      background:var(--dorado);
-      color:white;
-      padding:15px 30px;
-      text-decoration:none;
-      border-radius:40px;
-      font-weight:600;
-      transition:.3s;
-    }
-
-    .btn:hover{
-      background:white;
-      color:var(--azul-oscuro);
-    }
-
-    /* SECTIONS */
-
-    section{
-      padding:90px 0;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
-    }
-
-    .section-title h2{
-      font-size:2.5rem;
-      color:var(--azul-oscuro);
-      margin-bottom:15px;
-    }
-
-    .section-title p{
-      color:#666;
-      max-width:700px;
-      margin:auto;
-    }
-
-    /* ABOUT */
-
-    .about{
-      background:var(--gris);
-    }
-
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      align-items:center;
-    }
-
-    .about img{
-      width:100%;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,.15);
-    }
-
-    .about-content h3{
-      color:var(--azul-oscuro);
-      font-size:2rem;
-      margin-bottom:20px;
-    }
-
-    .about-content p{
-      margin-bottom:20px;
-    }
-
-    .check-list{
-      margin-top:20px;
-    }
-
-    .check-list li{
-      list-style:none;
-      margin-bottom:15px;
-      padding-left:30px;
-      position:relative;
-    }
-
-    .check-list li::before{
-      content:"✓";
-      position:absolute;
-      left:0;
-      color:var(--dorado);
-      font-weight:bold;
-    }
-
-    /* PROGRAMAS */
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-      gap:30px;
-    }
-
-    .card{
-      background:white;
-      padding:35px;
-      border-radius:20px;
-      box-shadow:0 10px 25px rgba(0,0,0,.08);
-      transition:.3s;
-      border-top:5px solid var(--azul-claro);
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-    }
-
-    .card h3{
-      color:var(--azul-oscuro);
-      margin-bottom:18px;
-    }
-
-    .card p{
-      margin-bottom:20px;
-      color:#555;
-    }
-
-    .card ul{
-      padding-left:18px;
-    }
-
-    .card ul li{
-      margin-bottom:10px;
-    }
-
-    /* RESULTADOS */
-
-    .results{
-      background:var(--azul-oscuro);
-      color:white;
-    }
-
-    .results-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:30px;
-      text-align:center;
-    }
-
-    .result-item{
-      padding:30px;
-      border:1px solid rgba(255,255,255,.2);
-      border-radius:18px;
-    }
-
-    .result-item h3{
-      color:var(--dorado);
-      font-size:1.2rem;
-      margin-bottom:15px;
-    }
-
-    /* CTA */
-
-    .cta{
-      background:var(--azul-claro);
-      text-align:center;
-      color:white;
-    }
-
-    .cta h2{
-      font-size:2.7rem;
-      margin-bottom:20px;
-    }
-
-    .cta p{
-      max-width:700px;
-      margin:auto auto 30px;
-      font-size:1.1rem;
-    }
-
-    /* FOOTER */
-
-    footer{
-      background:#1c2941;
-      color:white;
-      padding:40px 0;
-      text-align:center;
-    }
-
-    footer p{
-      margin-bottom:10px;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:900px){
-
-      .navbar{
-        flex-direction:column;
-        gap:20px;
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
 
-      nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-      }
-
-      .hero h2{
-        font-size:2.5rem;
-      }
-
-      .hero-subtitle{
-        font-size:2.2rem;
-      }
-
-      .about-grid{
-        grid-template-columns:1fr;
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
-
   </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Sandra Cabas",
+      "description": "Comunicación organizacional, coaching y marca personal para empresas, líderes, equipos y profesionales.",
+      "url": "https://sandracabas.com/",
+      "areaServed": "Colombia",
+      "founder": {
+        "@type": "Person",
+        "name": "Sandra Cabas",
+        "jobTitle": "Consultora en Comunicación Organizacional, Coach y Estratega de Marca Personal"
+      },
+      "serviceType": [
+        "Comunicación organizacional",
+        "Coaching ejecutivo",
+        "Marca personal",
+        "Gestión del cambio",
+        "Comunicación interna"
+      ],
+      "sameAs": []
+    }
+  </script>
 </head>
 
-<body>
+<body class="font-sans">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:bg-brand-gold focus:px-4 focus:py-3 focus:text-sm focus:font-bold focus:text-white">
+    Saltar al contenido
+  </a>
 
-  <!-- HEADER -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-brand-navy/88 text-white shadow-soft backdrop-blur-xl">
+    <div class="mx-auto flex w-[92%] max-w-7xl items-center justify-between py-4">
+      <a href="#inicio" class="group flex items-center gap-3" aria-label="Sandra Cabas, inicio">
+        <span class="grid h-14 w-14 place-items-center border border-white/25 bg-white/10 shadow-gold transition duration-300 group-hover:border-brand-gold">
+          <svg viewBox="0 0 64 64" class="h-10 w-10" aria-hidden="true">
+            <rect x="7" y="7" width="50" height="50" rx="8" fill="#ffffff" opacity="0.95" />
+            <path d="M19 40c6 6 20 6 26-1 4-5-1-11-10-12l-7-1c-5-1-7-4-4-8 4-5 16-4 21 1" fill="none" stroke="#233555" stroke-width="4" stroke-linecap="round" />
+            <path d="M17 48c11-2 22-9 31-22" fill="none" stroke="#D4A66A" stroke-width="3" stroke-linecap="round" />
+            <circle cx="47" cy="18" r="3" fill="#7F9BD0" />
+          </svg>
+        </span>
+        <span>
+          <span class="block text-2xl font-extrabold leading-none tracking-normal">Sandra Cabas</span>
+          <span class="mt-1 block text-xs font-semibold uppercase tracking-normal text-brand-gold">Comunicación, Coaching & Marca Personal</span>
+        </span>
+      </a>
 
-  <header>
-    <div class="container navbar">
+      <button id="menuButton" class="inline-flex h-11 w-11 items-center justify-center border border-white/20 md:hidden" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <span class="h-0.5 w-6 bg-white shadow-[0_8px_0_white,0_-8px_0_white]"></span>
+      </button>
 
-      <div class="logo">
-        <img src="logo.png" alt="Sandra Cabas">
-        <div class="brand-text">
-          <h1>Sandra Cabas</h1>
-          <span>Comunicación Organizacional & Coaching</span>
-        </div>
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#programas">Programas</a></li>
-          <li><a href="#resultados">Resultados</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+      <nav id="mainNav" class="absolute left-0 right-0 top-full hidden border-b border-white/10 bg-brand-navy px-6 py-5 md:static md:block md:border-0 md:bg-transparent md:p-0" aria-label="Navegación principal">
+        <ul class="flex flex-col gap-4 text-sm font-semibold md:flex-row md:items-center md:gap-8">
+          <li><a class="nav-link transition hover:text-brand-gold" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="nav-link transition hover:text-brand-gold" href="#servicios">Servicios</a></li>
+          <li><a class="nav-link transition hover:text-brand-gold" href="#metodo">Método</a></li>
+          <li><a class="nav-link transition hover:text-brand-gold" href="#resultados">Resultados</a></li>
+          <li><a class="nav-link border border-brand-gold px-5 py-3 text-brand-gold transition hover:bg-brand-gold hover:text-white" href="https://wa.me/573015840530?text=Hola%20Sandra%2C%20quiero%20conversar%20sobre%20comunicaci%C3%B3n%20organizacional%2C%20coaching%20o%20marca%20personal." target="_blank" rel="noopener">WhatsApp</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
-  <!-- HERO -->
-
-  <section class="hero" id="inicio">
-
-    <div class="container">
-
-      <div class="hero-content">
-
-        <div class="hero-subtitle">
-          El arte de conectar
+  <main id="contenido">
+    <section id="inicio" class="hero-media relative flex min-h-[94vh] items-center overflow-hidden pt-28 text-white">
+      <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
+      <div class="mx-auto grid w-[92%] max-w-7xl gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div class="reveal max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-normal text-brand-gold md:text-base">Comunicación estratégica con mirada humana</p>
+          <h1 class="mt-5 text-5xl font-black leading-[1.02] tracking-normal md:text-7xl">
+            Comunicación organizacional, coaching y marca personal
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-white/86 md:text-xl">
+            Acompaño organizaciones, líderes y profesionales a comunicar con claridad, construir confianza, fortalecer su presencia y convertir conversaciones en acción.
+          </p>
+          <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a href="https://wa.me/573015840530?text=Hola%20Sandra%2C%20quiero%20agendar%20una%20conversaci%C3%B3n%20inicial." target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-brand-gold px-7 py-4 text-sm font-bold uppercase tracking-normal text-white shadow-gold transition hover:-translate-y-1 hover:bg-white hover:text-brand-navy">
+              Escribir por WhatsApp
+            </a>
+            <a href="#servicios" class="inline-flex items-center justify-center border border-white/45 px-7 py-4 text-sm font-bold uppercase tracking-normal text-white transition hover:-translate-y-1 hover:border-brand-gold hover:text-brand-gold">
+              Ver servicios
+            </a>
+          </div>
         </div>
 
-        <h2>
-          Comunicación consciente para transformar liderazgo, cultura y resultados
-        </h2>
-
-        <p>
-          Integro coaching ontológico y comunicación organizacional para transformar mensajes en conversaciones que construyen confianza, alinean equipos y fortalecen la cultura.
-        </p>
-
-        <a href="#contacto" class="btn">
-          Agenda una conversación inicial
-        </a>
-
+        <aside class="reveal hidden lg:block" aria-label="Indicadores de enfoque">
+          <div class="float-soft ml-auto max-w-md border border-white/20 bg-white/12 p-7 shadow-soft backdrop-blur-xl">
+            <div class="flex items-center gap-4">
+              <div class="h-px flex-1 origin-left bg-brand-gold pulse-line"></div>
+              <span class="text-xs font-bold uppercase tracking-normal text-brand-gold">Enfoque integral</span>
+            </div>
+            <dl class="mt-8 grid grid-cols-2 gap-5">
+              <div class="border border-white/15 p-5">
+                <dt class="text-4xl font-black">01</dt>
+                <dd class="mt-2 text-sm text-white/80">Comunicación organizacional</dd>
+              </div>
+              <div class="border border-white/15 p-5">
+                <dt class="text-4xl font-black">02</dt>
+                <dd class="mt-2 text-sm text-white/80">Coaching y liderazgo</dd>
+              </div>
+              <div class="border border-white/15 p-5">
+                <dt class="text-4xl font-black">03</dt>
+                <dd class="mt-2 text-sm text-white/80">Marca personal</dd>
+              </div>
+              <div class="border border-white/15 p-5">
+                <dt class="text-4xl font-black">04</dt>
+                <dd class="mt-2 text-sm text-white/80">Cultura y cambio</dd>
+              </div>
+            </dl>
+          </div>
+        </aside>
       </div>
+    </section>
 
-    </div>
+    <section id="sobre-mi" class="bg-white py-24 md:py-32">
+      <div class="mx-auto grid w-[92%] max-w-7xl gap-14 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+        <div class="reveal relative">
+          <img class="aspect-[4/5] w-full object-cover shadow-soft" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop" alt="Consultora facilitando una conversación estratégica con un equipo" loading="lazy" />
+          <div class="absolute -bottom-8 right-5 max-w-xs border-l-4 border-brand-gold bg-brand-navy p-6 text-white shadow-soft">
+            <p class="text-2xl font-bold leading-tight">Comunicar mejor es liderar mejor.</p>
+          </div>
+        </div>
 
-  </section>
-
-  <!-- SOBRE MI -->
-
-  <section class="about" id="sobre-mi">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>¿Por qué trabajar conmigo?</h2>
-        <p>
-          Mi diferencial está en integrar coaching, comunicación y estrategia desde una mirada humana y transformadora.
-        </p>
-      </div>
-
-      <div class="about-grid">
-
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop" alt="">
-
-        <div class="about-content">
-
-          <h3>
+        <div class="reveal">
+          <p class="text-sm font-bold uppercase tracking-normal text-brand-gold">Por qué trabajar conmigo</p>
+          <h2 class="mt-4 text-4xl font-black leading-tight tracking-normal text-brand-navy md:text-6xl">
             Comunicación como espacio de transformación
-          </h3>
-
-          <p>
-            Trabajo allí donde la comunicación deja de ser solo información y se convierte en un espacio de aprendizaje, relación y acción.
+          </h2>
+          <p class="mt-7 text-lg leading-8 text-slate-700">
+            Trabajo allí donde la comunicación deja de ser solo información y se convierte en aprendizaje, relación, presencia y acción. Mi diferencial está en integrar comunicación organizacional, coaching y marca personal con estrategia y sensibilidad humana.
           </p>
 
-          <ul class="check-list">
-            <li>Coaching ontológico aplicado al liderazgo y equipos</li>
-            <li>Comunicación organizacional consciente</li>
-            <li>Agilismo y Management 3.0</li>
-            <li>Escucha profunda e inteligencia emocional</li>
-            <li>Transformación cultural sostenible</li>
-          </ul>
-
+          <div class="mt-9 grid gap-4 sm:grid-cols-2">
+            <div class="border border-slate-200 p-5 transition hover:-translate-y-1 hover:border-brand-sky hover:shadow-soft">
+              <h3 class="font-bold text-brand-navy">Coaching para liderazgo</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Aplicado a conversaciones, toma de decisiones, escucha y presencia.</p>
+            </div>
+            <div class="border border-slate-200 p-5 transition hover:-translate-y-1 hover:border-brand-sky hover:shadow-soft">
+              <h3 class="font-bold text-brand-navy">Comunicación organizacional</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Mensajes, canales y conversaciones que fortalecen confianza.</p>
+            </div>
+            <div class="border border-slate-200 p-5 transition hover:-translate-y-1 hover:border-brand-sky hover:shadow-soft">
+              <h3 class="font-bold text-brand-navy">Marca personal</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Claridad narrativa, posicionamiento y presencia profesional.</p>
+            </div>
+            <div class="border border-slate-200 p-5 transition hover:-translate-y-1 hover:border-brand-sky hover:shadow-soft">
+              <h3 class="font-bold text-brand-navy">Cultura y cambio</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Cuidado de la dimensión humana en transiciones organizacionales.</p>
+            </div>
+          </div>
         </div>
-
       </div>
+    </section>
 
-    </div>
+    <section id="servicios" class="texture-grid bg-brand-mist py-24 md:py-32">
+      <div class="mx-auto w-[92%] max-w-7xl">
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <p class="text-sm font-bold uppercase tracking-normal text-brand-gold">Servicios</p>
+          <h2 class="mt-4 text-4xl font-black leading-tight tracking-normal text-brand-navy md:text-6xl">
+            Líneas de acompañamiento para comunicar con intención y presencia
+          </h2>
+        </div>
 
-  </section>
+        <div class="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <article class="reveal group border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-brand-sky hover:shadow-soft">
+            <span class="text-xs font-extrabold uppercase tracking-normal text-brand-gold">01</span>
+            <h3 class="mt-5 text-xl font-bold leading-tight text-brand-navy">Comunicación Organizacional Estratégica</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-600">Alineación entre mensajes, cultura, liderazgo y propósito para fortalecer confianza.</p>
+            <ul class="mt-6 space-y-3 text-sm text-slate-700">
+              <li>Diagnóstico comunicacional</li>
+              <li>Comunicación interna y narrativa cultural</li>
+              <li>Conversaciones organizacionales críticas</li>
+            </ul>
+          </article>
 
-  <!-- PROGRAMAS -->
+          <article class="reveal group border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-brand-sky hover:shadow-soft">
+            <span class="text-xs font-extrabold uppercase tracking-normal text-brand-gold">02</span>
+            <h3 class="mt-5 text-xl font-bold leading-tight text-brand-navy">Coaching para Líderes y Equipos</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-600">Acompañamiento para comunicar con claridad, coherencia y presencia en entornos exigentes.</p>
+            <ul class="mt-6 space-y-3 text-sm text-slate-700">
+              <li>Coaching ejecutivo y de equipos</li>
+              <li>Escucha activa</li>
+              <li>Gestión emocional y liderazgo conversacional</li>
+            </ul>
+          </article>
 
-  <section id="programas">
+          <article class="reveal group border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-brand-sky hover:shadow-soft">
+            <span class="text-xs font-extrabold uppercase tracking-normal text-brand-gold">03</span>
+            <h3 class="mt-5 text-xl font-bold leading-tight text-brand-navy">Marca Personal y Posicionamiento</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-600">Claridad estratégica para profesionales que quieren comunicar su valor con autenticidad.</p>
+            <ul class="mt-6 space-y-3 text-sm text-slate-700">
+              <li>Propuesta de valor personal</li>
+              <li>Narrativa profesional</li>
+              <li>Presencia y comunicación ejecutiva</li>
+            </ul>
+          </article>
 
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Programas de acompañamiento</h2>
-        <p>
-          Procesos diseñados para fortalecer liderazgo, cultura organizacional y conversaciones conscientes.
-        </p>
+          <article class="reveal group border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-brand-sky hover:shadow-soft">
+            <span class="text-xs font-extrabold uppercase tracking-normal text-brand-gold">04</span>
+            <h3 class="mt-5 text-xl font-bold leading-tight text-brand-navy">Cultura, Cambio y Conversaciones</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-600">Acompañamiento a procesos de cambio cuidando la dimensión emocional y relacional.</p>
+            <ul class="mt-6 space-y-3 text-sm text-slate-700">
+              <li>Comunicación para el cambio</li>
+              <li>Alineación de equipos</li>
+              <li>Facilitación de conversaciones sensibles</li>
+            </ul>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="cards">
-
-        <div class="card">
-          <h3>Comunicación Consciente y Cultura Organizacional</h3>
-          <p>
-            Alineo comunicación, valores y propósito para fortalecer la cultura y el sentido de pertenencia.
+    <section id="metodo" class="bg-brand-navy py-24 text-white md:py-32">
+      <div class="mx-auto grid w-[92%] max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <div class="reveal lg:sticky lg:top-32">
+          <p class="text-sm font-bold uppercase tracking-normal text-brand-gold">Método</p>
+          <h2 class="mt-4 text-4xl font-black leading-tight tracking-normal md:text-6xl">
+            Una ruta clara para conversaciones profundas
+          </h2>
+          <p class="mt-6 text-lg leading-8 text-white/76">
+            Cada acompañamiento combina diagnóstico, diseño conversacional, coaching, facilitación y seguimiento para que la comunicación se vuelva práctica, visible y sostenible.
           </p>
-
-          <ul>
-            <li>Diagnóstico comunicacional</li>
-            <li>Estrategias de comunicación interna</li>
-            <li>Conversaciones organizacionales clave</li>
-          </ul>
         </div>
 
-        <div class="card">
-          <h3>Liderazgo Consciente y Comunicación Estratégica</h3>
-          <p>
-            Acompaño líderes a comunicar con claridad, coherencia y presencia.
-          </p>
-
-          <ul>
-            <li>Coaching individual y grupal</li>
-            <li>Escucha activa</li>
-            <li>Gestión emocional del liderazgo</li>
-          </ul>
+        <div class="space-y-5">
+          <div class="reveal border border-white/15 bg-white/8 p-7 transition hover:-translate-y-1 hover:border-brand-gold">
+            <span class="text-sm font-bold text-brand-gold">01 / Escuchar</span>
+            <h3 class="mt-3 text-2xl font-bold">Lectura de contexto y conversaciones críticas</h3>
+            <p class="mt-3 leading-7 text-white/74">Comprensión de cultura, tensiones, narrativas internas y oportunidades de alineación.</p>
+          </div>
+          <div class="reveal border border-white/15 bg-white/8 p-7 transition hover:-translate-y-1 hover:border-brand-gold">
+            <span class="text-sm font-bold text-brand-gold">02 / Diseñar</span>
+            <h3 class="mt-3 text-2xl font-bold">Estrategia comunicacional con intención humana</h3>
+            <p class="mt-3 leading-7 text-white/74">Arquitectura de mensajes, rituales, espacios, marca personal y decisiones comunicacionales.</p>
+          </div>
+          <div class="reveal border border-white/15 bg-white/8 p-7 transition hover:-translate-y-1 hover:border-brand-gold">
+            <span class="text-sm font-bold text-brand-gold">03 / Facilitar</span>
+            <h3 class="mt-3 text-2xl font-bold">Sesiones, coaching y conversaciones de alto impacto</h3>
+            <p class="mt-3 leading-7 text-white/74">Acompañamiento práctico para líderes y equipos en momentos de cambio, conflicto o crecimiento.</p>
+          </div>
+          <div class="reveal border border-white/15 bg-white/8 p-7 transition hover:-translate-y-1 hover:border-brand-gold">
+            <span class="text-sm font-bold text-brand-gold">04 / Sostener</span>
+            <h3 class="mt-3 text-2xl font-bold">Medición, aprendizaje y mejora continua</h3>
+            <p class="mt-3 leading-7 text-white/74">Seguimiento a hábitos, claridad de mensajes, calidad conversacional y acuerdos de equipo.</p>
+          </div>
         </div>
-
-        <div class="card">
-          <h3>Gestión del Cambio e Inteligencia Emocional</h3>
-          <p>
-            Facilito procesos de cambio cuidando la dimensión emocional y relacional de los equipos.
-          </p>
-
-          <ul>
-            <li>Comunicación empática</li>
-            <li>Manejo de resistencias</li>
-            <li>Regulación emocional</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Coaching Organizacional y de Equipos</h3>
-          <p>
-            Procesos de coaching enfocados en ampliar la capacidad de acción y resultados.
-          </p>
-
-          <ul>
-            <li>Coaching de equipos</li>
-            <li>Conversaciones efectivas</li>
-            <li>Mejora del desempeño relacional</li>
-          </ul>
-        </div>
-
       </div>
+    </section>
 
-    </div>
+    <section id="resultados" class="bg-white py-24 md:py-32">
+      <div class="mx-auto w-[92%] max-w-7xl">
+        <div class="reveal max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-normal text-brand-gold">Resultados</p>
+          <h2 class="mt-4 text-4xl font-black leading-tight tracking-normal text-brand-navy md:text-6xl">
+            Resultados que se sienten en la forma de trabajar
+          </h2>
+        </div>
 
-  </section>
-
-  <!-- RESULTADOS -->
-
-  <section class="results" id="resultados">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2 style="color:white;">Resultados que se construyen</h2>
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal border-l-4 border-brand-gold bg-brand-mist p-7">
+            <h3 class="text-xl font-bold text-brand-navy">Comunicación clara</h3>
+            <p class="mt-3 leading-7 text-slate-600">Mensajes coherentes que reducen ruido y fortalecen confianza.</p>
+          </div>
+          <div class="reveal border-l-4 border-brand-gold bg-brand-mist p-7">
+            <h3 class="text-xl font-bold text-brand-navy">Liderazgos con presencia</h3>
+            <p class="mt-3 leading-7 text-slate-600">Líderes más claros, humanos y efectivos en sus conversaciones.</p>
+          </div>
+          <div class="reveal border-l-4 border-brand-gold bg-brand-mist p-7">
+            <h3 class="text-xl font-bold text-brand-navy">Equipos alineados</h3>
+            <p class="mt-3 leading-7 text-slate-600">Mayor compromiso, sentido de pertenencia y coordinación.</p>
+          </div>
+          <div class="reveal border-l-4 border-brand-gold bg-brand-mist p-7">
+            <h3 class="text-xl font-bold text-brand-navy">Marca personal sólida</h3>
+            <p class="mt-3 leading-7 text-slate-600">Profesionales con una narrativa clara, coherente y diferencial.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="results-grid">
-
-        <div class="result-item">
-          <h3>Comunicación clara</h3>
-          <p>
-            Mensajes coherentes que fortalecen la confianza.
+    <section id="contacto" class="relative overflow-hidden bg-brand-sky py-24 text-white md:py-32">
+      <div class="absolute inset-0 opacity-20 texture-grid"></div>
+      <div class="relative mx-auto grid w-[92%] max-w-7xl gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+        <div class="reveal">
+          <p class="text-sm font-bold uppercase tracking-normal text-brand-gold">Conversemos</p>
+          <h2 class="mt-3 text-4xl font-black leading-tight tracking-normal md:text-6xl">
+            Si quieres comunicar distinto, empecemos por una conversación honesta.
+          </h2>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-white/86">
+            Exploremos juntas qué necesita tu organización, tu equipo o tu marca personal, y cómo puede la comunicación convertirse en una palanca real de confianza, cultura y posicionamiento.
           </p>
         </div>
 
-        <div class="result-item">
-          <h3>Liderazgos conscientes</h3>
-          <p>
-            Líderes más presentes, humanos y efectivos.
-          </p>
+        <div class="reveal border border-white/24 bg-brand-navy p-8 shadow-soft">
+          <p class="text-sm font-bold uppercase tracking-normal text-brand-gold">WhatsApp directo</p>
+          <p class="mt-4 text-2xl font-semibold leading-snug">Escríbeme al 301 584 0530 para entender contexto, retos y próximos pasos.</p>
+          <a href="https://wa.me/573015840530?text=Hola%20Sandra%2C%20quiero%20conversar%20sobre%20comunicaci%C3%B3n%20organizacional%2C%20coaching%20o%20marca%20personal." target="_blank" rel="noopener" class="mt-8 inline-flex w-full items-center justify-center bg-brand-gold px-7 py-4 text-center text-sm font-bold uppercase tracking-normal text-white shadow-gold transition hover:-translate-y-1 hover:bg-white hover:text-brand-navy">
+            Abrir WhatsApp
+          </a>
         </div>
-
-        <div class="result-item">
-          <h3>Equipos alineados</h3>
-          <p>
-            Mayor compromiso y sentido de pertenencia.
-          </p>
-        </div>
-
-        <div class="result-item">
-          <h3>Cambios sostenibles</h3>
-          <p>
-            Procesos organizacionales más humanos y adaptables.
-          </p>
-        </div>
-
       </div>
+    </section>
+  </main>
 
+  <footer class="bg-[#1c2941] py-10 text-white">
+    <div class="mx-auto flex w-[92%] max-w-7xl flex-col gap-4 text-sm text-white/72 md:flex-row md:items-center md:justify-between">
+      <p><strong class="text-white">Sandra Cabas</strong> · Comunicación Organizacional, Coaching & Marca Personal</p>
+      <p>© 2026 Todos los derechos reservados.</p>
     </div>
-
-  </section>
-
-  <!-- CTA -->
-
-  <section class="cta" id="contacto">
-
-    <div class="container">
-
-      <h2>
-        Conversemos
-      </h2>
-
-      <p>
-        Si sientes que es momento de comunicar distinto para lograr resultados distintos, agenda una conversación inicial y exploremos juntas el camino.
-      </p>
-
-      <a href="mailto:contacto@tumarca.com" class="btn">
-        Contactar ahora
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="container">
-
-      <p><strong>Sandra Cabas</strong></p>
-      <p>Coaching & Comunicación Organizacional</p>
-      <p>© 2026 Todos los derechos reservados</p>
-
-    </div>
-
   </footer>
 
+  <script>
+    const menuButton = document.querySelector('#menuButton');
+    const mainNav = document.querySelector('#mainNav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    menuButton?.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      mainNav.classList.toggle('hidden');
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        menuButton?.setAttribute('aria-expanded', 'false');
+        mainNav?.classList.add('hidden');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
 </body>
 </html>
